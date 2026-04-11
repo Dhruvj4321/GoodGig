@@ -46,10 +46,10 @@ const handleScroll = (id) => {
   />
 
   <div className="flex flex-col leading-tight">
-    <h1 className="font-montserrat font-bold text-lg md:text-xl text-gray-900">
+    <h1 className="font-montserrat tracking-widest font-bold text-lg md:text-xl text-gray-900">
       GOODGIG
     </h1>
-    <span className="text-[10px] md:text-[11px] font-montserrat font-semibold text-gray-600 tracking-wide">
+    <span className="text-[10px]  md:text-[11px] font-montserrat font-semibold text-gray-600 tracking-wider">
       CONSULTANCY
     </span>
   </div>
