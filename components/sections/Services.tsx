@@ -61,7 +61,7 @@ export default function Services() {
             </h3>
 
            
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm font-montserrat font-regular leading-relaxed">
               {service.desc}
             </p>
 
