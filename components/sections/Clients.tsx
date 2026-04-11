@@ -1,5 +1,26 @@
 "use client";
 
+function LogoRow({ items, reverse = false }) {
+  return (
+    <div className="relative w-full overflow-hidden">
+      <div
+        className={`flex w-max items-center gap-10 md:gap-14 lg:gap-16 ${
+          reverse ? "animate-scroll-reverse" : "animate-scroll"
+        }`}
+      >
+        {[...items, ...items].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt="client logo"
+            className="h-10 md:h-14 lg:h-16 xl:h-20 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Clients() {
   const logos = [
     "/Apnalaya.jpg",
@@ -15,12 +36,15 @@ export default function Clients() {
     "/nacglogo.png",
     "/nasscom foundation.png",
     "/oxfam.png",
-    "partnersinchange.jpeg",
+    "/partnersinchange.jpeg",
     "/tdh.jpeg",
     "/TRIOs.jpeg",
     "/unicef.jpeg",
-    "/workforce nutrition alliance.png"
+    "/workforce nutrition alliance.png",
   ];
+
+  const row1 = logos.filter((_, i) => i % 2 === 0);
+  const row2 = logos.filter((_, i) => i % 2 !== 0);
 
   return (
     <section id="clients" className="py-16 md:py-20 lg:py-24 bg-gray-50 overflow-hidden">
@@ -28,23 +52,9 @@ export default function Clients() {
         Clients
       </h2>
 
-      <div className="relative w-full overflow-hidden">
-        <div className="flex animate-scroll gap-8 md:gap-12 lg:gap-16 w-max items-center">
-          {[...logos, ...logos].map((logo, i) => (
-            <img
-              key={i}
-              src={logo}
-              alt="client logo"
-              className="
-                h-10 md:h-14 lg:h-16 xl:h-20
-                object-contain
-                grayscale opacity-70
-                hover:grayscale-0 hover:opacity-100
-                transition duration-300
-              "
-            />
-          ))}
-        </div>
+      <div className="space-y-10">
+        <LogoRow items={row1} />
+        <LogoRow items={row2}  />
       </div>
     </section>
   );

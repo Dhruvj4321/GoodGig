@@ -10,6 +10,7 @@ const navItems = [
   { label: "FEATURED WORK", id: "featured-work" },
   { label: "TESTIMONIALS", id: "testimonials" },
   { label: "TEAM", id: "team" },
+  { label: "FAQ", id: "faq" },
   { label: "CLIENTS", id: "clients" },
   { label: "CONTACT", id: "contact" },
 ];
