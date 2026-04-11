@@ -57,7 +57,7 @@ const item = {
 
 export default function Testimonials() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-white">
+    <section id="testimonials" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         
         {/* Heading */}

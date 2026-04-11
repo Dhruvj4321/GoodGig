@@ -5,7 +5,7 @@ import { Mail, Building2, FileText } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="py-16 md:py-20 px-4 sm:px-6 bg-white">
+    <section id="contact" className="py-16 md:py-20 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto text-center">
         
       
