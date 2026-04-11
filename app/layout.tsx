@@ -28,7 +28,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "GOODGIG",
+  title: "GOODGIG CONSULTANCY",
   description: "Strategic partners in your impact journey",
 };
 

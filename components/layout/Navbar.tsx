@@ -61,7 +61,7 @@ const handleScroll = (id) => {
   <button
     key={item.id}
     onClick={() => handleScroll(item.id)}
-    className="text-sm font-montserrat font-semibold text-gray-700 hover:text-black transition"
+    className="text-sm font-montserrat cursor-pointer font-semibold text-gray-700 hover:text-black transition"
   >
     {item.label}
   </button>
