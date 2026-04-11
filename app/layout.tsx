@@ -28,7 +28,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "GOODGIG CONSULTANCY",
+  title: "GOODGIG CONSULTANCY | Measuring Social Impact for non-profit, CSR and social enterprises",
   description: "Strategic partners in your impact journey",
 };
 

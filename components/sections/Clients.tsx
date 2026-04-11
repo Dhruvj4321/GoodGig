@@ -2,11 +2,24 @@
 
 export default function Clients() {
   const logos = [
-    "/images/clients/pehel.png",
-    "/images/clients/learninglinks.png",
-    "/images/clients/gain.png",
-    "/images/clients/nasscom.png",
-    "/images/clients/kkpkp.png",
+    "/Apnalaya.jpg",
+    "/aroehan.jpeg",
+    "/CRY.png",
+    "/British Asian Trust.png",
+    "/dure technologies.png",
+    "/eqfi.jpeg",
+    "/GAIN.png",
+    "/jagran pehel.jpeg",
+    "/KKKPK.jpeg",
+    "/market xcel.jpeg",
+    "/nacglogo.png",
+    "/nasscom foundation.png",
+    "/oxfam.png",
+    "partnersinchange.jpeg",
+    "/tdh.jpeg",
+    "/TRIOs.jpeg",
+    "/unicef.jpeg",
+    "/workforce nutrition alliance.png"
   ];
 
   return (
