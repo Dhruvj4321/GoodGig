@@ -15,7 +15,7 @@ export default function Navbar() {
     <div className="fixed top-0 left-0 w-full z-50 px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/10 rounded-2xl px-6 py-3 shadow-lg">
         
-        <h1 className="font-bold text-xl">GOODGIG</h1>
+        <h1 className="font-montserrat font-bold  text-xl">GOODGIG</h1>
 
         <button
           onClick={() =>
