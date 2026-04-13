@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 function Earth() {
   const meshRef = useRef<any>(null);
-  const texture = useTexture("/textures/earth.jpg");
+  const texture = useTexture("/textures/earth.png");
 
   useFrame(() => {
     if (meshRef.current) {

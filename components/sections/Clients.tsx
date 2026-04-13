@@ -1,6 +1,12 @@
 "use client";
 
-function LogoRow({ items, reverse = false }) {
+// 1. Define what your props look like
+interface LogoRowProps {
+  items: string[];      // An array of image URLs
+  reverse?: boolean;    // Optional boolean (defaults to false)
+}
+
+function LogoRow({ items, reverse = false }: LogoRowProps) {
   return (
     <div className="relative w-full overflow-hidden">
       <div
