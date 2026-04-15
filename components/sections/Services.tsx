@@ -1,45 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { services } from "@/data/services";
 
-const services = [
-  {
-    title: "Programme Design and Impact Strategy",
-    desc: "Strategic planning, Theory of Change, advocacy pathways, community engagement, and media influence mapping.",
-  },
-  {
-    title: "Research and Analysis",
-    desc: "Policy landscape mapping, designing research tools, field data capture, and data analysis.",
-  },
-  {
-    title: "Impact Measurement and Evaluation",
-    desc: "Baseline & endline studies, outcome evaluation, and CSR reporting.",
-  },
-  {
-    title: "Proposal / Pitch Deck Development",
-    desc: "Grant proposal writing, strategic pitch decks, and advocacy factsheets.",
-  },
-  {
-    title: "Thematic Assessments and Audits",
-    desc: "Sector-specific assessments: Child Rights, Gender Equity, Urban Poverty, and Nutrition.",
-  },
-  {
-    title: "Training and Content Development",
-    desc: "Capacity building kits, instruction modules, impact case studies, and data storytelling.",
-  },
-];
+
 
 export default function Services() {
+  const router = useRouter();
   return (
     <section id="services" className="py-24 px-6 bg-gray-50">
       <h2 className="text-4xl font-montserrat font-bold text-gray-900 text-center mb-16">
         Services
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {services.map((service, i) => (
           <motion.div
-            key={i}
+           key={service.id}
+  onClick={() => router.push(`/services/${service.id}`)}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
@@ -61,9 +40,9 @@ export default function Services() {
             </h3>
 
            
-            <p className="text-gray-600 text-sm font-montserrat font-regular leading-relaxed">
+            {/* <p className="text-gray-600 text-sm font-montserrat font-regular leading-relaxed">
               {service.desc}
-            </p>
+            </p> */}
 
            
           </motion.div>
