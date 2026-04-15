@@ -70,7 +70,7 @@ const handleNavigation = (item) => {
   <button
     key={item.label}
     onClick={() => handleNavigation(item)}
-    className="text-sm font-montserrat cursor-pointer font-semibold text-gray-700 hover:text-black transition"
+    className="text-[15px] font-montserrat cursor-pointer font-semibold text-[#428fc2] hover:text-brand transition"
   >
     {item.label}
   </button>
@@ -96,7 +96,7 @@ const handleNavigation = (item) => {
       handleNavigation(item);
       setOpen(false);
     }}
-    className="text-sm font-montserrat font-semibold text-gray-700 hover:text-black transition text-left"
+    className="text-sm font-montserrat font-semibold text-[#428fc2] hover:text-brand nsition text-left"
   >
     {item.label}
   </button>

@@ -104,17 +104,17 @@ export default function Testimonials() {
       </div>
 
       <div>
-        <p className="font-montserrat font-semibold text-lg text-gray-900 leading-snug">
+        <p className="font-montserrat font-semibold text-lg text-black leading-snug">
           {t.author}
         </p>
-        <p className="text-sm font-montserrat font-medium text-gray-500">
+        <p className="text-sm font-montserrat font-medium text-[#2f7fb8]">
           {t.role}
         </p>
       </div>
     </div>
 
     {/* Quote */}
-    <p className="text-gray-700 text-sm sm:text-[15px] leading-relaxed font-montserrat">
+    <p className="text-gray-800 text-sm sm:text-[15px] leading-relaxed font-montserrat font-regular">
       “{t.quote}”
     </p>
   </div>

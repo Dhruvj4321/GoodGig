@@ -73,7 +73,7 @@ function PersonCard({
       </div>
 
       <h3
-        className={`font-montserrat font-semibold text-black ${
+        className={`font-montserrat font-bold text-black ${
           isSmall ? "text-sm" : "text-base sm:text-lg"
         }`}
       >
@@ -81,7 +81,7 @@ function PersonCard({
       </h3>
 
       <p
-        className={`text-gray-600 mt-1 font-montserrat ${
+        className={`text-[#2f7fb8] mt-1 font-montserrat font-medium ${
           isSmall ? "text-xs" : "text-sm"
         }`}
       >
@@ -125,7 +125,7 @@ export default function TeamSection() {
         </h2>
 
         {/* Leadership */}
-        <h3 className="text-lg sm:text-xl font-montserrat font-semibold text-brand mb-4">
+        <h3 className="text-lg sm:text-xl font-montserrat font-semibold text-[#5a9ac9] mb-4">
           Leadership
         </h3>
 
@@ -136,7 +136,7 @@ export default function TeamSection() {
         </div>
 
         {/* Collaborators */}
-        <h3 className="text-lg sm:text-xl font-montserrat font-semibold text-brand mb-4">
+        <h3 className="text-lg sm:text-xl font-montserrat font-semibold text-[#5a9ac9] mb-4">
           Collaborators
         </h3>
 

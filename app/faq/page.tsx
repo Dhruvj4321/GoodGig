@@ -84,14 +84,14 @@ export default function FAQPage() {
 
   return (
     <section id="faq" className="py-24 px-6 bg-gray-50">
-      <h1 className="text-4xl font-montserrat font-bold text-gray-900 text-center mb-16">
+      <h1 className="text-4xl font-montserrat font-bold text-brand text-center mb-16">
         Frequently Asked Questions
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-15">
         {faqData.map((section) => (
           <div key={section.title}>
-            <h2 className="text-xl font-montserrat font-semibold text-gray-500 mb-6">
+            <h2 className="text-xl font-montserrat font-semibold text-[#5a9ac9] mb-6">
               {section.title}
             </h2>
 
@@ -103,7 +103,7 @@ export default function FAQPage() {
                 return (
                   <div
                     key={key}
-                    className="border rounded-2xl p-5 shadow-sm hover:shadow-md transition"
+                    className="border border-gray-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition"
                   >
                     <button
                       onClick={() => toggle(key)}
@@ -118,7 +118,7 @@ export default function FAQPage() {
                     </button>
 
                     {isOpen && (
-                      <p className="mt-3 font-montserrat tracking-wider font-regular text-sm text-gray-700 leading-relaxed">
+                      <p className="mt-3 font-montserrat  font-regular text-sm text-black leading-relaxed">
                         {item.a}
                       </p>
                     )}
