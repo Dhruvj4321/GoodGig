@@ -54,7 +54,7 @@ export default function Clients() {
 
   return (
     <section id="clients" className="py-16 md:py-20 lg:py-24 bg-gray-50 overflow-hidden">
-      <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-gray-900 text-center mb-10 md:mb-12">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-brand text-center mb-10 md:mb-12">
         Clients
       </h2>
 

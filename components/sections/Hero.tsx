@@ -33,7 +33,7 @@ export default function Hero() {
             variants={item}
             className="font-montserrat text-5xl md:text-7xl font-extrabold leading-tight text-gray-900"
           >
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className=" text-brand">
               Strategic Partners
             </span>
             <br />
@@ -42,13 +42,13 @@ export default function Hero() {
 
           <motion.p
             variants={item}
-            className="font-montserrat font-medium tracking-widest mt-6 text-lg text-gray-600"
+            className="font-montserrat font-medium tracking-widest mt-6 text-lg text-black"
           >
             Goodgig Consultancy delivers tailored services in policy research, impact assessment, and advisory.
           </motion.p>
         </div>
 
-        <div className="text-gray-600 space-y-4">
+        <div className="text-black space-y-4">
           <motion.p
             variants={item}
             className="font-montserrat tracking-widest font-medium"

@@ -120,12 +120,12 @@ export default function TeamSection() {
     <section id="team" className="py-16 md:py-10 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-montserrat font-bold text-gray-900 text-center mb-12 sm:mb-16">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-montserrat font-bold text-brand text-center mb-12 sm:mb-16">
           Meet Our Team
         </h2>
 
         {/* Leadership */}
-        <h3 className="text-lg sm:text-xl font-montserrat font-semibold text-gray-900 mb-4">
+        <h3 className="text-lg sm:text-xl font-montserrat font-semibold text-brand mb-4">
           Leadership
         </h3>
 
@@ -136,7 +136,7 @@ export default function TeamSection() {
         </div>
 
         {/* Collaborators */}
-        <h3 className="text-lg sm:text-xl font-montserrat font-semibold text-gray-900 mb-4">
+        <h3 className="text-lg sm:text-xl font-montserrat font-semibold text-brand mb-4">
           Collaborators
         </h3>
 

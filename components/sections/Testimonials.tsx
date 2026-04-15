@@ -67,7 +67,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto">
         
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-montserrat font-bold text-gray-900 text-center mb-10 sm:mb-14 lg:mb-16">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-montserrat font-bold text-brand text-center mb-10 sm:mb-14 lg:mb-16">
           Client Testimonials
         </h2>
 

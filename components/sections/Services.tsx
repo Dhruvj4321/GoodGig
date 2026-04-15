@@ -10,7 +10,7 @@ export default function Services() {
   const router = useRouter();
   return (
     <section id="services" className="py-24 px-6 bg-gray-50">
-      <h2 className="text-4xl font-montserrat font-bold text-gray-900 text-center mb-16">
+      <h2 className="text-4xl font-montserrat font-bold text-brand text-center mb-16">
         Services
       </h2>
 
