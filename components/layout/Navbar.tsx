@@ -4,13 +4,14 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation"; 
 
 const navItems = [
   { label: "SERVICES", id: "services" },
   { label: "FEATURED WORK", id: "featured-work" },
   { label: "TESTIMONIALS", id: "testimonials" },
   { label: "TEAM", id: "team" },
-  { label: "FAQ", id: "faq" },
+  { label: "FAQ", route: "/faq" },
   { label: "CLIENTS", id: "clients" },
   { label: "CONTACT", id: "contact" },
 ];
@@ -19,12 +20,19 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
-
+const router = useRouter();
   useEffect(() => setMounted(true), []);
 const handleScroll = (id) => {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+const handleNavigation = (item) => {
+  if (item.route) {
+    router.push(item.route); // 👈 route navigation
+  } else {
+    handleScroll(item.id); // 👈 scroll
   }
 };
   if (!mounted) return null;
@@ -58,10 +66,10 @@ const handleScroll = (id) => {
 
        
         <div className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
+     {navItems.map((item) => (
   <button
-    key={item.id}
-    onClick={() => handleScroll(item.id)}
+    key={item.label}
+    onClick={() => handleNavigation(item)}
     className="text-sm font-montserrat cursor-pointer font-semibold text-gray-700 hover:text-black transition"
   >
     {item.label}
@@ -81,11 +89,11 @@ const handleScroll = (id) => {
     
       {open && (
         <div className="md:hidden mt-3 max-w-6xl mx-auto backdrop-blur-xl bg-white/90 border border-gray-200 rounded-2xl shadow-md p-4 flex flex-col gap-4">
-          {navItems.map((item) => (
+         {navItems.map((item) => (
   <button
-    key={item.id}
+    key={item.label}
     onClick={() => {
-      handleScroll(item.id);
+      handleNavigation(item);
       setOpen(false);
     }}
     className="text-sm font-montserrat font-semibold text-gray-700 hover:text-black transition text-left"

@@ -18,7 +18,7 @@ export default function Home() {
       <Clients />
       <TeamSection/>
       <Testimonials/>
-      <FAQPage/>
+     
       <Contact/>
     </main>
   );

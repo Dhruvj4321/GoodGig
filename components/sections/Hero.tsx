@@ -51,13 +51,13 @@ export default function Hero() {
         <div className="text-gray-600 space-y-4">
           <motion.p
             variants={item}
-            className="font-montserrat tracking-widest font-light"
+            className="font-montserrat tracking-widest font-medium"
           >
             We work with nonprofits, governments, CSR foundations and social enterprises.
           </motion.p>
           <motion.p
             variants={item}
-            className="font-montserrat font-light tracking-widest"
+            className="font-montserrat font-medium tracking-widest"
           >
             We believe everyday actions can create transformation.
           </motion.p>
