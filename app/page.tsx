@@ -6,7 +6,7 @@ import Reach from "@/components/sections/Reach";
 import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import TeamSection from "@/components/sections/TeamandCollaborators";
-import FAQPage from "@/components/sections/Faq";
+
 
 export default function Home() {
   return (

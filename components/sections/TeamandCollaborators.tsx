@@ -8,11 +8,13 @@ const founders = [
     name: "Anuja Shah",
     role: "Founder and Director",
     image: "/Anuja-Shah.webp",
+    linkedin: "https://www.linkedin.com/in/anuja-kastia-shah/",
   },
   {
     name: "Sangeeta M",
     role: "Lead Consultant - Knowledge",
     image: "/Sangeeta-M.webp",
+    linkedin: "https://www.linkedin.com/in/sangeeta-m-0b2a72141/",
   },
 ];
 
@@ -21,26 +23,31 @@ const collaborators = [
     name: "Raghunandan Hegde",
     role: "Advisor - Monitoring, Evaluation and Learning",
     image: "/Raghunandan-Hegde.webp",
+    linkedin: "https://www.linkedin.com/in/raghunandanhegde/",
   },
   {
     name: "Steshia Monserrate",
     role: "Consultant - Marketing Communications",
     image: "/Steshia-Monserrate.webp",
+    linkedin: "https://www.linkedin.com/in/steshiamonserrate/",
   },
   {
     name: "Mandheer Singh",
     role: "Consultant - Brand Communications",
     image: "/Mandeer-Singh.webp",
+    linkedin: "https://www.linkedin.com/in/mandheer-singh/",
   },
   {
     name: "Dhwani Bafna",
     role: "Consultant - Education and Development",
     image: "/Dhwani-Bafna.webp",
+    linkedin: "https://www.linkedin.com/in/dhwanibafna/",
   },
   {
     name: "Chandrika Singh",
     role: "Consultant - Gender and Development",
     image: "/Chandrika-Singh.webp",
+    linkedin: "https://www.linkedin.com/in/chandrika-singh-077351247/",
   },
 ];
 
@@ -48,17 +55,24 @@ function PersonCard({
   name,
   role,
   image,
+  linkedin,
   variant = "default",
 }: {
   name: string;
   role: string;
   image: string;
+    linkedin?: string;
   variant?: "default" | "small";
 }) {
   const isSmall = variant === "small";
 
   return (
-    <div
+    <a
+  href={linkedin}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block"
+>   <div
       className={`p-5 rounded-2xl shadow-md border bg-white hover:shadow-lg transition text-center w-full ${
         isSmall ? "min-w-[180px] p-3" : ""
       }`}
@@ -87,7 +101,8 @@ function PersonCard({
       >
         {role}
       </p>
-    </div>
+    </div></a>
+ 
   );
 }
 
