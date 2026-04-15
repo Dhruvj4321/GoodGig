@@ -27,9 +27,9 @@ function Atmosphere() {
     <mesh>
       <sphereGeometry args={[2.7, 64, 64]} />
       <meshBasicMaterial
-        color="#6366f1" // softer indigo
+        color="#6366f1"
         transparent
-        opacity={0.12} // reduced for light mode
+        opacity={0.12}
         side={2}
       />
     </mesh>
@@ -39,28 +39,19 @@ function Atmosphere() {
 export default function Reach() {
   return (
     <section className="py-32 relative bg-white overflow-hidden">
-      
-     
-
-      <h2 className="text-5xl font-extrabold text-gray-900 text-center mb-20 relative z-10">
+      <h2 className="text-4xl font-montserrat font-bold text-gray-900 text-center mb-16">
         Our Global Reach
       </h2>
 
       <div className="h-[500px] w-full relative z-10">
         <Canvas camera={{ position: [0, 0, 6] }}>
-          
-          {/* Balanced lighting for light UI */}
           <ambientLight intensity={0.8} />
           <directionalLight position={[5, 3, 5]} intensity={1} />
           <directionalLight position={[-5, -3, -5]} intensity={0.4} />
 
-          {/* Earth */}
           <Earth />
-
-          {/* Subtle glow */}
           <Atmosphere />
 
-          {/* Controls */}
           <OrbitControls
             enableZoom={false}
             autoRotate
@@ -68,6 +59,14 @@ export default function Reach() {
           />
         </Canvas>
       </div>
+
+      {/* Added at bottom */}
+      <p className="max-w-3xl mx-auto font-montserrat font-semibold text-center text-gray-600 text-sm leading-relaxed relative z-10">
+        Our expertise is shared by remarkable organisations we serve. Through our
+        client base, we have had the privilege of carrying out programme
+        assessments and policy research spanning across 22 states in India and
+        13 countries in Asia, Africa, and Latin America.
+      </p>
     </section>
   );
 }

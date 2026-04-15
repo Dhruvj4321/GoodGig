@@ -19,7 +19,7 @@ function LogoRow({ items, reverse = false }: LogoRowProps) {
             key={i}
             src={logo}
             alt="client logo"
-            className="h-10 md:h-14 lg:h-16 xl:h-20 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"
+            className="h-10 md:h-14 lg:h-16 xl:h-20 object-contain"
           />
         ))}
       </div>
