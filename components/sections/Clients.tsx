@@ -1,19 +1,13 @@
 "use client";
 
-// 1. Define what your props look like
 interface LogoRowProps {
-  items: string[];      // An array of image URLs
-  reverse?: boolean;    // Optional boolean (defaults to false)
+  items: string[];
 }
 
-function LogoRow({ items, reverse = false }: LogoRowProps) {
+function LogoRow({ items }: LogoRowProps) {
   return (
     <div className="relative w-full overflow-hidden">
-      <div
-        className={`flex w-max items-center gap-10 md:gap-14 lg:gap-16 ${
-          reverse ? "animate-scroll-reverse" : "animate-scroll"
-        }`}
-      >
+      <div className="flex w-max items-center gap-10 md:gap-14 lg:gap-16 animate-scroll">
         {[...items, ...items].map((logo, i) => (
           <img
             key={i}
@@ -49,19 +43,13 @@ export default function Clients() {
     "/workforce nutrition alliance.png",
   ];
 
-  const row1 = logos.filter((_, i) => i % 2 === 0);
-  const row2 = logos.filter((_, i) => i % 2 !== 0);
-
   return (
-    <section id="clients" className="py-16 md:py-20 lg:py-24 bg-gray-50 overflow-hidden">
+    <section className="py-16 md:py-20 lg:py-24 bg-gray-50 overflow-hidden">
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-brand text-center mb-10 md:mb-12">
         Clients
       </h2>
 
-      <div className="space-y-10">
-        <LogoRow items={row1} />
-        <LogoRow items={row2}  />
-      </div>
+      <LogoRow items={logos} />
     </section>
   );
 }
