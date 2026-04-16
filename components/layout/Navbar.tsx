@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation"; 
+import Link from "next/link";
 
 const navItems = [
   { label: "SERVICES", id: "services" },
@@ -46,22 +47,23 @@ const handleNavigation = (item) => {
   onClick={() => handleScroll("hero")}
   className="flex items-center gap-3 cursor-pointer"
 >
-  <Image
+   <Link href="/"> <Image
     src="/Goodgig+Consultancy+logo-preview.png"
     alt="GoodGig Logo"
     width={40}
     height={40}
     className="object-contain"
-  />
-
-  <div className="flex flex-col leading-tight">
+  /></Link>
+ <Link href="/"><div className="flex flex-col leading-tight">
     <h1 className="font-montserrat tracking-widest font-bold text-lg md:text-xl text-gray-900">
       GOODGIG
     </h1>
     <span className="text-[10px]  md:text-[11px] font-montserrat font-semibold text-gray-600 tracking-wider">
       CONSULTANCY
     </span>
-  </div>
+  </div></Link>
+
+  
 </div>
 
        
