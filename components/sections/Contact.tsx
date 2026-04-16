@@ -21,7 +21,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="mt-3 text-gray-500 font-montserrat font-medium text-sm sm:text-base max-w-2xl mx-auto"
+          className="mt-3 text-gray-500 font-montserrat font-medium text-sm sm:text-base max-w-3xl mx-auto"
         >
           Have questions or want to collaborate? Reach out to us and we’ll get back to you shortly.
         </motion.p>
@@ -60,7 +60,7 @@ export default function Contact() {
 
      
         <div className="mt-10 border-t border-gray-200 pt-6">
-          <p className="text-xs sm:text-sm text-gray-500 font-montserrat">
+          <p className="text-xs sm:text-sm text-gray-700 font-montserrat">
             © 2026 Goodgig Consultancy Private Limited. All rights reserved. CIN - U80902MH2021OPC360468
           </p>
         </div>
