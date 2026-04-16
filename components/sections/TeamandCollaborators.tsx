@@ -73,14 +73,14 @@ function PersonCard({
   rel="noopener noreferrer"
   className="block"
 >   <div
-      className={`p-5 rounded-2xl shadow-md border bg-white hover:shadow-lg transition text-center w-full ${
+      className={`p-5 rounded-2xl shadow-md border bg-white hover:shadow-lg transition text-center w-full    hover:border-indigo-300 ${
         isSmall ? "min-w-[180px] p-3" : ""
       }`}
     >
       {/* Image */}
       <div
-        className={`mx-auto mb-4 relative overflow-hidden rounded-full ${
-          isSmall ? "w-16 h-16" : "w-24 h-24"
+        className={`mx-auto mb-4 relative overflow-hidden rounded-md ${
+          isSmall ? "w-16 h-16" : "w-24 h-30"
         }`}
       >
         <Image src={image} alt={name} fill className="object-cover" />
