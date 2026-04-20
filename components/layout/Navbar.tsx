@@ -17,23 +17,29 @@ const navItems = [
   { label: "CONTACT", id: "contact" },
 ];
 
+interface NavItem {
+  label: string;
+  id?: string;    // Optional because some items use 'route' instead
+  route?: string; // Optional because some items use 'id' instead
+}
+
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
 const router = useRouter();
   useEffect(() => setMounted(true), []);
-const handleScroll = (id) => {
+const handleScroll = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
   }
 };
-const handleNavigation = (item) => {
+const handleNavigation = (item: NavItem) => {
   if (item.route) {
-    router.push(item.route); // 👈 route navigation
-  } else {
-    handleScroll(item.id); // 👈 scroll
+    router.push(item.route); 
+  } else if (item.id) {
+    handleScroll(item.id); 
   }
 };
   if (!mounted) return null;
