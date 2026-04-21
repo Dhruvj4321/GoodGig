@@ -80,7 +80,7 @@ function PersonCard({
       {/* Image */}
       <div
         className={`mx-auto mb-4 relative overflow-hidden rounded-md ${
-          isSmall ? "w-16 h-16" : "w-24 h-30"
+          isSmall ? "w-16 h-20" : "w-24 h-30"
         }`}
       >
         <Image src={image} alt={name} fill className="object-cover" />

@@ -15,7 +15,7 @@
   --color-foreground: var(--foreground);
 
   /* ✅ Set default font to Roboto */
-  --font-sans: var(--font-roboto);
+  --font-roboto: var(--font-roboto);
 
   /* Optional */
   --font-mono: var(--font-geist-mono);

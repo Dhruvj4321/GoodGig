@@ -44,7 +44,10 @@ export default function Hero() {
             variants={item}
             className="font-montserrat font-medium tracking-widest mt-6 text-lg text-black"
           >
-            Goodgig Consultancy delivers tailored services in policy research, impact assessment, and advisory.
+           Goodgig Consultancy is a Social Impact Consulting firm delivering tailored, project-based
+services in Policy Research and Impact Assessment.
+
+
           </motion.p>
         </div>
 
@@ -53,13 +56,15 @@ export default function Hero() {
             variants={item}
             className="font-montserrat tracking-widest font-medium"
           >
-            We work with nonprofits, governments, CSR foundations and social enterprises.
+            We enjoy working alongside nonprofits, governments, CSR foundations and social enterprises to support their missions through policy research, impact evaluation and strategic advising. 
+
+
           </motion.p>
           <motion.p
             variants={item}
             className="font-montserrat font-medium tracking-widest"
           >
-            We believe everyday actions can create transformation.
+          At Goodgig Consultancy, we believe the world is rich with inherent goodness, and everyday actions can be a powerful force for transformation. We work in close collaboration with organisations and people dedicated to improving the lives of others, empowering one another to contribute towards a just, equitable and inclusive society.
           </motion.p>
         </div>
       </motion.div>
