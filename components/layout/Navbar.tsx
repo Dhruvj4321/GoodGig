@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const navItems = [
   { label: "SERVICES", id: "services" },
-  { label: "FEATURED WORK", id: "featured-work" },
+  // { label: "FEATURED WORK", id: "featured-work" },
   { label: "TESTIMONIALS", id: "testimonials" },
   { label: "TEAM", id: "team" },
   { label: "FAQ", route: "/faq" },
@@ -37,9 +37,15 @@ const handleScroll = (id: string) => {
 };
 const handleNavigation = (item: NavItem) => {
   if (item.route) {
-    router.push(item.route); 
+    router.push(item.route);
   } else if (item.id) {
-    handleScroll(item.id); 
+    if (window.location.pathname !== "/") {
+      // Go to home with hash
+      router.push(`/#${item.id}`);
+    } else {
+      // Already on home → just scroll
+      handleScroll(item.id);
+    }
   }
 };
   if (!mounted) return null;

@@ -31,7 +31,7 @@ export default function Hero() {
         <div>
           <motion.h1
             variants={item}
-            className="font-montserrat text-5xl md:text-7xl font-extrabold leading-tight text-gray-900"
+            className="font-montserrat text-2xl md:text-5xl font-extrabold leading-tight text-gray-900"
           >
             <span className=" text-brand">
               Strategic Partners
