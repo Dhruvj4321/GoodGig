@@ -142,7 +142,7 @@ function MagneticButton({ children, onClick }: { children: React.ReactNode; onCl
         transition={{ duration: 0.35 }}
       />
       <span
-        className="relative z-10 transition-colors duration-300"
+        className="relative z-10 transition-colors duration-300 font-montserrat font-semibold"
         style={{ color: BRAND.primaryDark }}
       >
         {children}
@@ -164,7 +164,7 @@ function RevealWord({ word, delay, accent }: { word: string; delay: number; acce
   return (
     <span className="inline-block overflow-hidden" style={{ verticalAlign: "bottom" }}>
       <motion.span
-        className="inline-block"
+        className="inline-block font-montserrat font-bold"
         style={accent ? { color: BRAND.primary, fontStyle: "italic" } : {}}
         initial={{ y: "108%", opacity: 0 }}
         animate={{ y: "0%", opacity: 1 }}
@@ -203,12 +203,12 @@ function StatCard({ num, suffix, label, delay }: { num: number; suffix: string; 
       />
       <div className="relative px-5 py-4 rounded-xl">
         <div
-          className="font-cormorant text-3xl font-light leading-none mb-1"
+          className="font-montserrat font-semibold  text-3xl  leading-none mb-1"
           style={{ color: BRAND.primary }}
         >
           {started ? <AnimatedCounter value={num} suffix={suffix} /> : `0${suffix}`}
         </div>
-        <div className="font-montserrat text-[9px] tracking-[0.25em] uppercase text-stone-400">{label}</div>
+        <div className="font-montserrat font-semibold  text-[9px] tracking-[0.25em] uppercase text-gray-400">{label}</div>
       </div>
     </motion.div>
   );
@@ -232,7 +232,7 @@ function ImpactTicker() {
       >
         {repeated.map((item, i) => (
           <div key={i} className="flex items-center gap-8 flex-shrink-0">
-            <span className="font-montserrat text-[10px] tracking-[0.28em] uppercase text-stone-400">
+            <span className="font-montserrat font-semibold text-[10px] tracking-[0.28em] uppercase text-gray-400">
               {item}
             </span>
             <span style={{ width: 3, height: 3, borderRadius: "50%", background: `rgba(9,120,200,0.35)`, display: "inline-block" }} />
@@ -313,7 +313,7 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.2 }}
           />
           <span
-            className="font-montserrat text-[9px] tracking-[0.42em] uppercase"
+            className="font-montserrat font-semibold text-[10px] tracking-[0.42em] uppercase"
             style={{ color: BRAND.primary, opacity: 0.75 }}
           >
             Social Impact Consulting
@@ -323,7 +323,7 @@ export default function Hero() {
         {/* Headline — much smaller */}
         <div className="mb-7">
           <h1
-            className="font-cormorant font-light leading-[0.93] text-stone-900"
+            className=" leading-[1.10] text-stone-900"
             style={{ fontSize: "clamp(2.4rem, 4.2vw, 4.8rem)" }}
           >
             <div className="flex gap-[0.2em] flex-wrap">
@@ -372,15 +372,15 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="font-montserrat text-[0.88rem] leading-[1.85] text-stone-600 tracking-wide mb-5">
+            <p className="font-montserrat font-semibold text-[0.88rem] leading-[1.85] text-stone-600 tracking-wide mb-5">
               Goodgig Consultancy is a Social Impact Consulting firm delivering tailored, project-based
               services in{" "}
-              <span className="font-semibold" style={{ color: BRAND.primaryDark }}>Policy Research</span>{" "}
+              <span className="font-semibold font-montserrat" style={{ color: BRAND.primaryDark }}>Policy Research</span>{" "}
               and{" "}
-              <span className="font-semibold" style={{ color: BRAND.primaryDark }}>Impact Assessment</span>.
+              <span className="font-semibold font-montserrat" style={{ color: BRAND.primaryDark }}>Impact Assessment</span>.
             </p>
 
-            <p className="font-montserrat text-[0.8rem] leading-[1.95] text-stone-500 tracking-wide mb-8">
+            <p className="font-montserrat font-semibold text-[0.8rem] leading-[1.95] text-gray-600 tracking-wide mb-8">
               We work alongside nonprofits, governments, CSR foundations and social enterprises to
               support their missions through policy research, impact evaluation and strategic advising.
             </p>
@@ -396,7 +396,7 @@ export default function Hero() {
             className="flex flex-col justify-between gap-7"
           >
             <p
-              className="font-montserrat text-[0.8rem] leading-[2] text-stone-500 tracking-wide pl-5 italic"
+              className="font-montserrat font-semibold text-[0.8rem] leading-[2] text-gray-600 tracking-wide pl-5 "
               style={{ borderLeft: `1.5px solid rgba(9,120,200,0.3)` }}
             >
               At Goodgig Consultancy, we believe the world is rich with inherent goodness, and everyday
