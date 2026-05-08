@@ -59,12 +59,12 @@ export default function Reach() {
           />
         </Canvas>
       </div>
- <h2 className="text-4xl font-montserrat font-bold text-black text-center mb-8">
+ <h2 className="text-4xl font-montserrat font-bold text-brand text-center mb-8">
   <span className="mr-6">55+ Projects</span>
   <span>15+ Clients</span>
 </h2>
       {/* Added at bottom */}
-      <p className="max-w-3xl mx-auto font-montserrat font-semibold text-center text-gray-600 text-sm leading-relaxed relative z-10">
+      <p className="max-w-3xl mx-auto font-montserrat font-semibold text-center text-black tracking-wide relative z-10 text-[0.88rem] leading-[1.95]">
         Our expertise is shared by remarkable organisations we serve. Through our
         client base, we have had the privilege of carrying out programme
         assessments and policy research spanning across 22 states in India and

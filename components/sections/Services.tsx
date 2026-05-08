@@ -32,7 +32,7 @@ export default function Services() {
               transition-all duration-300 cursor-pointer"
           >
           
-            <div className="w-10 h-1 mb-4 bg-indigo-500 group-hover:w-14 transition-all duration-300" />
+            <div className="w-10 h-1 mb-4 bg-[#5a9ac9] group-hover:w-14 transition-all duration-300" />
 
             {/* Title */}
             <h3 className="font-montserrat font-semibold text-gray-900 text-lg mb-2">

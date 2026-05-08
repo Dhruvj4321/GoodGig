@@ -84,7 +84,7 @@ export default function Testimonials() {
   key={index}
   variants={item}
   whileHover={{ y: -8, scale: 1.01 }}
-  className="relative p-6 rounded-3xl bg-white/80 backdrop-blur-md border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col h-full overflow-hidden"
+  className="relative p-6 rounded-3xl bg-white/80 backdrop-blur-md border border-gray-200 shadow-md  hover:border-indigo-300 transition-all duration-300 flex flex-col h-full overflow-hidden"
 >
   {/* subtle gradient glow */}
   <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 opacity-60 pointer-events-none" />
@@ -114,7 +114,7 @@ export default function Testimonials() {
     </div>
 
     {/* Quote */}
-    <p className="text-gray-800 text-sm sm:text-[15px] leading-relaxed font-montserrat font-regular">
+    <p className="text-black text-sm sm:text-[15px] leading-relaxed font-montserrat font-medium">
       “{t.quote}”
     </p>
   </div>

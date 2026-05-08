@@ -14,7 +14,7 @@ const BRAND = {
 };
 
 const WORDS_LINE1 = ["Strategic", "Partners"];
-const WORDS_LINE2 = ["in your", "Impact", "Journey."];
+const WORDS_LINE2 = ["in your", "Impact", "Journey"];
 
 function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -126,7 +126,7 @@ function MagneticButton({ children, onClick }: { children: React.ReactNode; onCl
       onMouseMove={handleMouse}
       onMouseLeave={() => { x.set(0); y.set(0); }}
       onClick={onClick}
-      className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-[11px] font-semibold tracking-[0.18em] uppercase overflow-hidden font-montserrat"
+      className="group relative inline-flex items-center gap-2.5 px-6 py-3 text-[11px] font-semibold tracking-[0.18em] uppercase overflow-hidden font-montserrat cursor-pointer"
     >
       {/* Default border */}
       <span
@@ -208,7 +208,7 @@ function StatCard({ num, suffix, label, delay }: { num: number; suffix: string; 
         >
           {started ? <AnimatedCounter value={num} suffix={suffix} /> : `0${suffix}`}
         </div>
-        <div className="font-montserrat font-semibold  text-[9px] tracking-[0.25em] uppercase text-gray-400">{label}</div>
+        <div className="font-montserrat font-semibold  text-[9px] tracking-[0.25em] uppercase text-black">{label}</div>
       </div>
     </motion.div>
   );
@@ -232,7 +232,7 @@ function ImpactTicker() {
       >
         {repeated.map((item, i) => (
           <div key={i} className="flex items-center gap-8 flex-shrink-0">
-            <span className="font-montserrat font-semibold text-[10px] tracking-[0.28em] uppercase text-gray-400">
+            <span className="font-montserrat font-semibold text-[10px] tracking-[0.28em] uppercase text-gray-700">
               {item}
             </span>
             <span style={{ width: 3, height: 3, borderRadius: "50%", background: `rgba(9,120,200,0.35)`, display: "inline-block" }} />
@@ -314,7 +314,7 @@ export default function Hero() {
           />
           <span
             className="font-montserrat font-semibold text-[10px] tracking-[0.42em] uppercase"
-            style={{ color: BRAND.primary, opacity: 0.75 }}
+            style={{ color: BRAND.primaryDark, opacity: 0.75 }}
           >
             Social Impact Consulting
           </span>
@@ -323,8 +323,8 @@ export default function Hero() {
         {/* Headline — much smaller */}
         <div className="mb-7">
           <h1
-            className=" leading-[1.10] text-stone-900"
-            style={{ fontSize: "clamp(2.4rem, 4.2vw, 4.8rem)" }}
+            className=" leading-[1.10] text-stone-900 text-5xl"
+           
           >
             <div className="flex gap-[0.2em] flex-wrap">
               {WORDS_LINE1.map((w, i) => (
@@ -333,7 +333,7 @@ export default function Hero() {
             </div>
             <div className="flex gap-[0.2em] flex-wrap mt-[0.04em]">
               {WORDS_LINE2.map((w, i) => (
-                <RevealWord key={w} word={w} delay={0.52 + i * 0.12} accent={w === "Impact"} />
+                <RevealWord key={w} word={w} delay={0.52 + i * 0.12}  />
               ))}
             </div>
           </h1>
@@ -372,7 +372,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="font-montserrat font-semibold text-[0.88rem] leading-[1.85] text-stone-600 tracking-wide mb-5">
+            <p className="font-montserrat font-semibold text-[0.88rem] leading-[1.85] text-black tracking-wide mb-5">
               Goodgig Consultancy is a Social Impact Consulting firm delivering tailored, project-based
               services in{" "}
               <span className="font-semibold font-montserrat" style={{ color: BRAND.primaryDark }}>Policy Research</span>{" "}
@@ -380,7 +380,7 @@ export default function Hero() {
               <span className="font-semibold font-montserrat" style={{ color: BRAND.primaryDark }}>Impact Assessment</span>.
             </p>
 
-            <p className="font-montserrat font-semibold text-[0.8rem] leading-[1.95] text-gray-600 tracking-wide mb-8">
+            <p className="font-montserrat font-semibold text-[0.88rem] leading-[1.95] text-black tracking-wide mb-8">
               We work alongside nonprofits, governments, CSR foundations and social enterprises to
               support their missions through policy research, impact evaluation and strategic advising.
             </p>
@@ -396,19 +396,19 @@ export default function Hero() {
             className="flex flex-col justify-between gap-7"
           >
             <p
-              className="font-montserrat font-semibold text-[0.8rem] leading-[2] text-gray-600 tracking-wide pl-5 "
+              className="font-montserrat font-semibold text-[0.88rem] leading-[2] text-black tracking-wide pl-5 "
               style={{ borderLeft: `1.5px solid rgba(9,120,200,0.3)` }}
             >
               At Goodgig Consultancy, we believe the world is rich with inherent goodness, and everyday
               actions can be a powerful force for transformation. We work in close collaboration with
-              organisations dedicated to improving the lives of others — empowering one another toward a
+              organisations dedicated to improving the lives of others to empower one another toward a
               just, equitable and inclusive society.
             </p>
 
             <div className="grid grid-cols-3 gap-2.5">
               <StatCard num={50} suffix="+" label="Projects" delay={1.55} />
               <StatCard num={12} suffix="+" label="Countries" delay={1.7} />
-              <StatCard num={8} suffix="yrs" label="Experience" delay={1.85} />
+              <StatCard num={6} suffix="yrs" label="Experience" delay={1.85} />
             </div>
           </motion.div>
         </div>
@@ -424,7 +424,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Scroll cue */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -440,7 +440,7 @@ export default function Hero() {
           animate={{ scaleY: [1, 0.3, 1], opacity: [0.4, 0.85, 0.4] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* Bottom rule */}
       <motion.div
