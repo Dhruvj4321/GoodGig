@@ -203,8 +203,8 @@ function StatCard({ num, suffix, label, delay }: { num: number; suffix: string; 
       />
       <div className="relative px-5 py-4 rounded-xl">
         <div
-          className="font-montserrat font-semibold  text-3xl  leading-none mb-1"
-          style={{ color: BRAND.primary }}
+          className="font-montserrat font-semibold text-[#0978c8] text-3xl  leading-none mb-1"
+      
         >
           {started ? <AnimatedCounter value={num} suffix={suffix} /> : `0${suffix}`}
         </div>
