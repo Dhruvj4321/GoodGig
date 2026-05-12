@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 
 // Brand palette
 const BRAND = {
@@ -77,7 +77,7 @@ function AmbientOrbs() {
 
 // Tiny floating dots in brand blue
 function ParticleField() {
-  const particles = Array.from({ length: 18 }, (_, i) => ({
+  const particles =  Array.from({ length: 18 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,

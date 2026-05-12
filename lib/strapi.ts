@@ -1,32 +1,54 @@
-const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
-
-if (!API_URL) {
-  throw new Error("NEXT_PUBLIC_STRAPI_URL is missing");
-}
-
-const headers = {
-  Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-};
+export const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL ?? "";
+const TOKEN = process.env.STRAPI_API_TOKEN ?? "";
+const headers = { Authorization: `Bearer ${TOKEN}` };
 
 export async function getProjectsByService(service: string) {
-  const res = await fetch(
-    `${API_URL}/api/projects?filters[service][$eq]=${service}&populate=*`,
-    {
-      headers,
-      next: { revalidate: 60 },
-    }
-  );
+  const url = `${API_URL}/api/projects?filters[service][$eq]=${service}&populate=*`;
+  const res = await fetch(url, { headers, cache: "no-store" });
+  const json = await res.json();
 
-  const data = await res.json();
-  return data.data;
+  // Log the shape of the first item so we can see exactly what's coming back
+  console.log("FIRST ITEM KEYS:", Object.keys(json.data?.[0] ?? {}));
+  console.log("FIRST ITEM:", JSON.stringify(json.data?.[0], null, 2));
+
+  return (json.data ?? []).filter(Boolean); // filter out any undefined/null entries
 }
 
-export async function getProjectById(id: string) {
-  const res = await fetch(`${API_URL}/api/projects/${id}?populate=*`, {
-    headers,
-    next: { revalidate: 60 },
-  });
+export async function getProjectById(documentId: string) {
+  const url = `${API_URL}/api/projects/${documentId}?populate=*`;
+  const res = await fetch(url, { headers, cache: "no-store" });
+  const json = await res.json();
 
-  const data = await res.json();
-  return data.data;
+  console.log("PROJECT ITEM:", JSON.stringify(json.data, null, 2));
+
+  return json.data || null;
+}
+
+export function getImageUrl(project: any): string | null {
+  // Guard against undefined/null project
+  if (!project) return null;
+
+  const raw = project.image_url ?? null;
+  if (!raw) return null;
+  if (raw.startsWith("http")) return raw;
+  return `${API_URL}${raw}`;
+}
+
+export function renderText(field: any): string {
+  if (!field) return "";
+  if (typeof field === "string") return field;
+  if (Array.isArray(field)) {
+    return field.map((block: any) => {
+      if (block.type === "paragraph" || block.type === "heading") {
+        return block.children?.map((c: any) => c.text).join("") ?? "";
+      }
+      if (block.type === "list") {
+        return block.children
+          ?.map((item: any) => item.children?.map((c: any) => c.text).join(""))
+          .join("\n") ?? "";
+      }
+      return "";
+    }).join("\n\n");
+  }
+  return String(field);
 }
