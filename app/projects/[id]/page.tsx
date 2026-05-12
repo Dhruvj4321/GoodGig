@@ -14,7 +14,12 @@ export default async function ProjectPage({ params }: any) {
     );
   }
 
-  const imageUrl = getImageUrl(project);
+  // ✅ SAFE IMAGE HANDLING (fixes intermittent issue)
+  const imageUrl =
+    typeof project?.image_url === "string" && project.image_url.trim().length > 0
+      ? getImageUrl(project.image_url)
+      : null;
+
   const background = renderText(project.background);
   const outcomes = renderText(project.outcomes);
 
@@ -22,16 +27,18 @@ export default async function ProjectPage({ params }: any) {
     <main className="min-h-screen bg-slate-50 py-20 px-6">
       <div className="max-w-5xl mx-auto">
 
-        <Link
+        {/* <Link
           href={`/services/${project.service}`}
-          className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-900 mb-8 transition-colors text-sm"
+          className="inline-flex items-center gap-2 text-black hover:text-brand mb-8 transition-colors text-sm font-montserrat font-regular"
         >
           ← Back to {project.service?.replace(/-/g, " ")}
-        </Link>
+        </Link> */}
 
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+
+          {/* ✅ IMAGE BLOCK */}
           {imageUrl ? (
-            <div className="relative h-[400px] w-full">
+          <div className="relative w-full aspect-[16/10]">
               <Image
                 src={imageUrl}
                 alt={project.title ?? "Project"}
@@ -39,6 +46,7 @@ export default async function ProjectPage({ params }: any) {
                 sizes="(max-width: 1024px) 100vw, 1024px"
                 className="object-cover"
                 priority
+                unoptimized={false}
               />
             </div>
           ) : (
@@ -48,27 +56,28 @@ export default async function ProjectPage({ params }: any) {
           )}
 
           <div className="p-10">
-            <h1 className="text-3xl font-bold text-slate-900 mb-2 whitespace-pre-line">
+            <h1 className="text-xl text-brand  font-montserrat font-semibold mb-2 whitespace-pre-line">
               {project.title}
             </h1>
 
-            <p className="text-indigo-600 font-medium mb-2">
+            <p className="text-[#0978c8] font-montserrat font-medium mb-2">
               {project.organization}
             </p>
 
             {project.themes && (
-              <p className="text-sm text-slate-400 mb-8">
+              <p className="text-sm font-montserrat font-medium text-slate-700 mb-8">
                 {project.themes}
               </p>
             )}
 
             <div className="space-y-8">
+
               {background && (
                 <div>
-                  <h2 className="text-xl font-semibold text-slate-900 mb-3">
+                  <h2 className="text-xl font-montserrat font-medium text-black mb-3">
                     Background
                   </h2>
-                  <p className="text-slate-700 leading-8 whitespace-pre-line">
+                  <p className="text-black font-montserrat font-medium leading-8 whitespace-pre-line text-sm">
                     {background}
                   </p>
                 </div>
@@ -76,10 +85,10 @@ export default async function ProjectPage({ params }: any) {
 
               {outcomes && (
                 <div>
-                  <h2 className="text-xl font-semibold text-slate-900 mb-3">
+                  <h2 className="text-xl font-montserrat font-semibold  text-slate-900 mb-3">
                     Outcomes
                   </h2>
-                  <p className="text-slate-700 leading-8 whitespace-pre-line">
+                  <p className="text-black font-montserrat font-medium text-sm leading-8 whitespace-pre-line">
                     {outcomes}
                   </p>
                 </div>
@@ -87,16 +96,17 @@ export default async function ProjectPage({ params }: any) {
 
               {project.report_url && (
                 <div className="pt-4 border-t border-slate-100">
-                  
+                  <a
                     href={project.report_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl hover:bg-indigo-700 transition font-medium text-sm"
-                  <a>
+                    className="inline-flex items-center gap-2 border-1 border-brand text-brand px-6 py-3 rounded-xl hover:bg-brand hover:text-white transition font-montserrat font-medium text-sm"
+                  >
                     View Full Report →
                   </a>
                 </div>
               )}
+
             </div>
           </div>
         </div>

@@ -8,8 +8,8 @@ export async function getProjectsByService(service: string) {
   const json = await res.json();
 
   // Log the shape of the first item so we can see exactly what's coming back
-  console.log("FIRST ITEM KEYS:", Object.keys(json.data?.[0] ?? {}));
-  console.log("FIRST ITEM:", JSON.stringify(json.data?.[0], null, 2));
+  // console.log("FIRST ITEM KEYS:", Object.keys(json.data?.[0] ?? {}));
+  // console.log("FIRST ITEM:", JSON.stringify(json.data?.[0], null, 2));
 
   return (json.data ?? []).filter(Boolean); // filter out any undefined/null entries
 }
@@ -19,19 +19,22 @@ export async function getProjectById(documentId: string) {
   const res = await fetch(url, { headers, cache: "no-store" });
   const json = await res.json();
 
-  console.log("PROJECT ITEM:", JSON.stringify(json.data, null, 2));
+  // console.log("PROJECT ITEM:", JSON.stringify(json.data, null, 2));
 
   return json.data || null;
 }
 
-export function getImageUrl(project: any): string | null {
-  // Guard against undefined/null project
-  if (!project) return null;
-
-  const raw = project.image_url ?? null;
+export function getImageUrl(raw: any): string | null {
   if (!raw) return null;
-  if (raw.startsWith("http")) return raw;
-  return `${API_URL}${raw}`;
+
+  if (typeof raw !== "string") return null;
+
+  const url = raw.trim();
+  if (!url) return null;
+
+  if (url.startsWith("http")) return url;
+
+  return `${process.env.NEXT_PUBLIC_STRAPI_URL}${url}`;
 }
 
 export function renderText(field: any): string {
