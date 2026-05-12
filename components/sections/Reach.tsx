@@ -39,7 +39,7 @@ function Atmosphere() {
 export default function Reach() {
   return (
     <section className="py-32 relative bg-white overflow-hidden">
-      <h2 className="text-4xl font-montserrat font-bold text-brand text-center mb-16">
+      <h2 className="text-4xl font-montserrat font-bold text-brand text-center mb-0">
         Our Global Reach
       </h2>
 
