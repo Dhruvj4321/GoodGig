@@ -1,6 +1,6 @@
 import { getProjectById, getImageUrl, renderText } from "@/lib/strapi";
 import Image from "next/image";
-import Link from "next/link";
+
 
 export default async function ProjectPage({ params }: any) {
   const resolvedParams = await params;
