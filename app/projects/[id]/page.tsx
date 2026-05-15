@@ -24,7 +24,7 @@ export default async function ProjectPage({ params }: any) {
   const outcomes = renderText(project.outcomes);
 
   return (
-    <main className="min-h-screen bg-slate-50 py-20 px-6">
+    <main className="min-h-screen bg-slate-50 py-20 px-6 ">
       <div className="max-w-5xl mx-auto">
 
         {/* <Link
@@ -34,21 +34,20 @@ export default async function ProjectPage({ params }: any) {
           ← Back to {project.service?.replace(/-/g, " ")}
         </Link> */}
 
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-white rounded-3xl shadow-xl  overflow-hidden border border-gray-300">
 
           {/* ✅ IMAGE BLOCK */}
           {imageUrl ? (
-          <div className="relative w-full aspect-[16/10]">
-              <Image
-                src={imageUrl}
-                alt={project.title ?? "Project"}
-                fill
-                sizes="(max-width: 1024px) 100vw, 1024px"
-                className="object-cover"
-                priority
-                unoptimized={false}
-              />
-            </div>
+       <div className="relative w-full sm:h-[700px] h-[420px] md:h-[600px] lg:h-[750px] bg-white flex items-center justify-center border-b border-gray-200">
+  <Image
+    src={imageUrl}
+    alt={project.title ?? "Project"}
+    fill
+    sizes="(max-width: 1024px) 100vw, 1024px"
+    className="object-contain p-4"
+    priority
+  />
+</div>
           ) : (
             <div className="h-[400px] w-full bg-slate-100 flex items-center justify-center text-slate-400">
               No image
@@ -65,7 +64,7 @@ export default async function ProjectPage({ params }: any) {
             </p>
 
             {project.themes && (
-              <p className="text-sm font-montserrat font-medium text-slate-700 mb-8">
+              <p className="text-sm font-montserrat font-medium text-black mb-8">
                 {project.themes}
               </p>
             )}

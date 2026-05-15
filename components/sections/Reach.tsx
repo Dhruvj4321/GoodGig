@@ -38,7 +38,7 @@ function Atmosphere() {
 
 export default function Reach() {
   return (
-    <section className="py-32 relative bg-white overflow-hidden">
+    <section className="py-20 relative bg-white overflow-hidden">
       <h2 className="text-4xl font-montserrat font-bold text-brand text-center mb-0">
         Our Global Reach
       </h2>
@@ -59,7 +59,7 @@ export default function Reach() {
           />
         </Canvas>
       </div>
- <h2 className="text-4xl font-montserrat font-bold text-[#0978c8] text-center mb-8">
+ <h2 className="text-4xl font-montserrat font-bold text-[#0978c8] text-center mb-8 -mt-10">
   <span className="mr-6">55+ Projects</span>
   <span>15+ Clients</span>
 </h2>

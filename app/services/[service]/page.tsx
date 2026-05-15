@@ -29,18 +29,18 @@ export default async function ServicePage({ params }: any) {
     <Link
       key={project.id}
       href={`/projects/${project.documentId}`}
-      className="bg-white rounded-3xl shadow-lg overflow-hidden border hover:shadow-xl transition"
+      className="bg-white rounded-3xl shadow-md overflow-hidden border border-gray-300 hover:shadow-xl transition"
     >
       {imageUrl ? (
-       <div className="relative w-full aspect-[4/3]">
-          <Image
-            src={imageUrl}
-            alt={project.title ?? "Project"}
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover"
-          />
-        </div>
+       <div className="relative w-full h-[420px] bg-white border-b border-gray-200">
+  <Image
+    src={imageUrl}
+    alt={project.title ?? "Project"}
+    fill
+    sizes="(max-width: 768px) 100vw, 33vw"
+    className="object-contain"
+  />
+</div>
       ) : (
         <div className="h-60 w-full bg-slate-100 flex items-center justify-center text-slate-400 text-sm">
           No image
