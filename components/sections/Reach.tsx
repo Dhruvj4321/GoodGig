@@ -39,11 +39,11 @@ function Atmosphere() {
 export default function Reach() {
   return (
     <section className="py-20 relative bg-white overflow-hidden">
-      <h2 className="text-4xl font-montserrat font-bold text-brand text-center mb-0">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-brand text-center mb-0">
         Our Global Reach
       </h2>
 
-      <div className="h-[500px] w-full relative z-10">
+      <div className="h-[500px] w-full relative z-10 -mt-10">
         <Canvas camera={{ position: [0, 0, 6] }}>
           <ambientLight intensity={0.8} />
           <directionalLight position={[5, 3, 5]} intensity={1} />
@@ -59,7 +59,7 @@ export default function Reach() {
           />
         </Canvas>
       </div>
- <h2 className="text-4xl font-montserrat font-bold text-[#0978c8] text-center mb-8 -mt-10">
+ <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-[#0978c8] text-center mb-8 -mt-10">
   <span className="mr-6">55+ Projects</span>
   <span>15+ Clients</span>
 </h2>

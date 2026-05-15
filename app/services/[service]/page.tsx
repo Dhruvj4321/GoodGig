@@ -48,7 +48,7 @@ export default async function ServicePage({ params }: any) {
       )}
 
       <div className="p-6">
-     <h3 className="text-sm text-brand  font-montserrat font-semibold mb-2 whitespace-pre-line">
+     <h3 className="text-sm text-brand  font-montserrat font-semibold mb-2 -mt-3 whitespace-pre-line">
   {project.title || '-'}
 </h3>
 

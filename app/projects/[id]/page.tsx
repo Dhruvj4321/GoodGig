@@ -34,11 +34,10 @@ export default async function ProjectPage({ params }: any) {
           ← Back to {project.service?.replace(/-/g, " ")}
         </Link> */}
 
-        <div className="bg-white rounded-3xl shadow-xl  overflow-hidden border border-gray-300">
-
+<div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-300 md:grid md:grid-cols-2">
           {/* ✅ IMAGE BLOCK */}
           {imageUrl ? (
-       <div className="relative w-full sm:h-[700px] h-[420px] md:h-[600px] lg:h-[750px] bg-white flex items-center justify-center border-b border-gray-200">
+       <div className="relative w-full sm:h-[700px] h-[420px] md:h-[600px] lg:h-[750px] bg-white flex items-center justify-center ">
   <Image
     src={imageUrl}
     alt={project.title ?? "Project"}
@@ -55,7 +54,7 @@ export default async function ProjectPage({ params }: any) {
           )}
 
           <div className="p-10">
-            <h1 className="text-xl text-brand  font-montserrat font-semibold mb-2 whitespace-pre-line">
+            <h1 className="text-xl text-brand  font-montserrat font-semibold mb-2 whitespace-pre-line -mt-5">
               {project.title}
             </h1>
 
