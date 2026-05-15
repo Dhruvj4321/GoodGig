@@ -41,11 +41,11 @@ export default function Services() {
             </h3>
 
             {/* Description */}
-            {service.desc && (
+            {/* {service?.desc && (
               <p className="text-slate-600 text-sm leading-relaxed mb-6">
                 {service.desc}
               </p>
-            )}
+            )} */}
  <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-br from-[#5a9ac9]/8 to-indigo-400/8 opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             {/* CTA */}
             <div className="flex items-center text-brand font-montserrat font-medium text-sm gap-2 opacity-70 group-hover:opacity-100 transition">
